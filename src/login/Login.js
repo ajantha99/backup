@@ -95,7 +95,7 @@ export default function SignIn() {
 
           {/*sx={{ width: 540 ,height:100}}*/}
 
-          <Avatar alt="Remy Sharp" src={Logo} variant="square"  />
+          <Avatar alt="Aiesec-image" src={Logo} variant="square" sx={{ width: 180 ,height:80}}  />
           {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             {/* <LockOutlinedIcon /> 
           </Avatar> */}
