@@ -26,28 +26,48 @@ public class MemberImple implements MemberService {
     public String addMember(MemberDTO memberDTO) {
 
         Member member = new Member(
-                memberDTO.getMemberid(),
-                memberDTO.getMembername(),
+                memberDTO.getMemberId(),
+                memberDTO.getMemberfname(),
+                memberDTO.getMembermname(),
+                memberDTO.getMemberlname(),
+                memberDTO.getBdate(),
+                memberDTO.getGender(),
+                memberDTO.getUsername(),
+                this.passwordEncoder.encode(memberDTO.getPassword()),
+                this.passwordEncoder.encode(memberDTO.getCpassword()),
+                memberDTO.getPemail(),
                 memberDTO.getEmail(),
-
-                this.passwordEncoder.encode(memberDTO.getPassword())
+                memberDTO.getStreetAddress(),
+                memberDTO.getLine2(),
+                memberDTO.getCity(),
+                memberDTO.getProvince(),
+                memberDTO.getFaculty(),
+                memberDTO.getWappnum(),
+                memberDTO.getFofunction(),
+                memberDTO.getFoposition(),
+                memberDTO.getBofunction(),
+                memberDTO.getBoposition(),
+                memberDTO.getJoindate(),
+                memberDTO.getOevpname(),
+                memberDTO.getTlmname(),
+                memberDTO.getPfimageUrl()
         );
 
         memberRepo.save(member);
 
-        return member.getMembername();
+        return member.getMemberfname();
     }
 
     @Override
     public LoginResponse loginMember(LoginDTO loginDTO) {
         String msg = "";
-        Member member1 = memberRepo.findByEmail(loginDTO.getEmail());
+        Member member1 = memberRepo.findByEmail(loginDTO.getUsername());
         if(member1 != null){
             String password = loginDTO.getPassword();
             String encodedPassword = member1.getPassword();
             Boolean isPwdRight = passwordEncoder.matches(password, encodedPassword);
             if(isPwdRight){
-                Optional<Member> member = memberRepo.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
+                Optional<Member> member = memberRepo.findOneByEmailAndPassword(loginDTO.getUsername(), encodedPassword);
                 if(member.isPresent()){
                     return new LoginResponse("Login Success", true);
                 }else{

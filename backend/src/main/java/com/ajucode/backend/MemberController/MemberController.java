@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 public class MemberController {
 
-
     @Autowired
     private MemberService memberService;
 

@@ -3,23 +3,23 @@ package com.ajucode.backend.Dto;
 
 public class LoginDTO {
 
-    private String email;
+    private String username;
     private String password;
 
-    public LoginDTO(String email, String password) {
-        this.email = email;
+    public LoginDTO(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
     public LoginDTO() {
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -33,7 +33,7 @@ public class LoginDTO {
     @Override
     public String toString() {
         return "LoginDTO{" +
-                "email='" + email + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
