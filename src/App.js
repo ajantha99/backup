@@ -10,13 +10,13 @@ function App() {
   return (
     <div className="App">
       
-      {/* <BrowserRouter>
+      <BrowserRouter>
           <Routes>
             <Route path="/home" element= {<Home/>} />
             <Route path="/" element= {<Login/>} />
           </Routes>
-      </BrowserRouter> */}
-      <Registration />
+      </BrowserRouter>
+      {/* <Registration /> */}
       {/* <ResetPassword/> */}
       {/* <VerifyEmail/> */}
     </div>
