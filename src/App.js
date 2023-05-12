@@ -16,8 +16,8 @@ function App() {
             <Route path="/" element= {<Login/>} />
           </Routes>
       </BrowserRouter> */}
-      {/* <Registration /> */}
-      <ResetPassword/>
+      <Registration />
+      {/* <ResetPassword/> */}
       {/* <VerifyEmail/> */}
     </div>
   );

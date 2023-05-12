@@ -62,7 +62,7 @@ export default function VerifyEmail() {
             
             <Grid item >
                 <Link href="#" variant="body2">
-                  {"Don't receive an email? Resend"}
+                  {"Don't receive an email? Resend"} <br/> <br/>
                 </Link>
             </Grid>
             

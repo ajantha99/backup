@@ -1,3 +1,6 @@
+import {  useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,31 +17,19 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FormControl, InputLabel, MenuItem, Select, OutlinedInput } from '@mui/material';
 
 
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const theme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -56,7 +47,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Manual Registration
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={4}>
                 <TextField
@@ -357,9 +348,9 @@ export default function SignUp() {
                     // onChange={handleChange}
                   >
                     <MenuItem value="tharindhu">Tharindu </MenuItem>
-                    <MenuItem value="icv b2b">Sathsara	</MenuItem>
-                    <MenuItem value="icx m&ir">Imali </MenuItem>
-                    <MenuItem value="icx mkt">Roshan </MenuItem>
+                    <MenuItem value="satharsara">Sathsara	</MenuItem>
+                    <MenuItem value="imali">Imali </MenuItem>
+                    <MenuItem value="roshan">Roshan </MenuItem>
                     <MenuItem value="igt">Chathurya  </MenuItem>
                     <MenuItem value="ogv">Sajani	</MenuItem>
                     <MenuItem value="ogt">Hasee	</MenuItem>
@@ -384,6 +375,15 @@ export default function SignUp() {
                 />
               </Grid>
 
+              <Grid item xs={12} sm={3} >
+                <TextField
+                  accept="image/*"
+                  id="profile"
+                  multiple
+                  type="file"
+                  label="Profile Upload "
+                />
+              </Grid>
 
               <Grid item xs={12}>
                 <FormControlLabel
@@ -396,6 +396,7 @@ export default function SignUp() {
               type="submit"
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+             
             >
               Register
             </Button>
@@ -404,7 +405,7 @@ export default function SignUp() {
             </Grid> */}
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+       
       </Container>
     </ThemeProvider>
   );
