@@ -372,16 +372,17 @@ export default function SignUp() {
                   id="tlmname"
                   label="TL/Manager Name"
                   name="tlmname"
+                  
                 />
               </Grid>
 
               <Grid item xs={12} sm={3} >
                 <TextField
-                  accept="image/*"
                   id="profile"
                   multiple
                   type="file"
-                  label="Profile Upload "
+                  
+                  
                 />
               </Grid>
 

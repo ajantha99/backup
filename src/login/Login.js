@@ -7,15 +7,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {Link, useParas} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import LinkMui from '@mui/material/Link';
 import Logo from "./Logo.png"
+//import { List } from "@mui/material";
+
 
 // function Copyright(props) {
 
@@ -138,9 +140,12 @@ export default function SignIn() {
             
             <Grid container >
             <Grid item xs >
-                <Link href="#" variant="body2"  display="flex" justifyContent="flex-end" sx={{ mt: '-30px' }}> 
-                  Forgot password?
-                </Link>
+             
+              {/* <Link to={`/forgot`} >Forgot password?</Link> */}
+             
+                <LinkMui to variant="body2"  display="flex" justifyContent="flex-end" sx={{ mt: '-30px' }} > 
+                <Link to={`/forgot`} >Forgot password?</Link>
+                </LinkMui>
               </Grid>
             </Grid>
   

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
 import EmailLogo from "./email.jpg"
 import UpHeader from "./UpHeader";
 
@@ -27,7 +28,7 @@ export default function VerifyEmail() {
 
       <Grid item xs={12}>
       <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs" sx={ {border: 1, borderRadius: '5%', borderColor: 'grey.500',boxShadow: 3}} >
+      <Container  component="main" maxWidth="xs" sx={ {border: 'none', borderRadius: '5%', borderColor: 'grey.500',boxShadow: 1, marginTop:'50px'}} >
        
         <CssBaseline />
         <Box
@@ -39,7 +40,7 @@ export default function VerifyEmail() {
           }}
         >
 
-          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 150 ,height:100}}  />
+          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 150 ,height:100, mt:4}} />
 
           <Typography  component="h4" variant="h5"  sx={{ mt:'10px'}}>
             Verify Your Email
