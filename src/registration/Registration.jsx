@@ -1,5 +1,4 @@
-import {  useState } from "react";
-import { useNavigate } from 'react-router-dom';
+
 import axios from "axios";
 import * as React from 'react';
 import Button from '@mui/material/Button';
@@ -7,7 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,6 +13,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FormControl, InputLabel, MenuItem, Select, OutlinedInput } from '@mui/material';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormLabel from '@mui/material/FormLabel';
 
 
 const theme = createTheme();
@@ -44,11 +45,11 @@ export default function SignUp() {
           }}
         >
 
-          <Typography component="h1" variant="h5">
+          {/* <Typography component="h1" variant="h5">
             Manual Registration
-          </Typography>
+          </Typography> */}
           <Box component="form" noValidate sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
               <Grid item xs={12} sm={4}>
                 <TextField
                   autoComplete="given-name"
@@ -80,17 +81,38 @@ export default function SignUp() {
               </Grid>
               
 
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={4}>
                 <TextField
                   required
                   fullWidth
-                  id="birthdate"
-                  label="Birth Date"
-                  name="birthdate"
-                  type="date"
+                  id="nic"
+                  label="NIC Number"
+                  name="nic"
                 />
               </Grid>
-              <Grid item xs={12} sm={6} >
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="aiesecmail"
+                  label="AIESEC Mail"
+                  name="aiesecmail"
+                  type="email"
+                  autoComplete="aiesecmail"
+                />
+              </Grid>
+              {/* <Grid item xs={12} sm={6} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Gender</InputLabel>
                 <Select
@@ -106,10 +128,10 @@ export default function SignUp() {
                   </Select>
 
                 </FormControl>
-              </Grid>
+              </Grid> */}
 
 
-              <Grid item xs={12} sm={4}>
+              {/* <Grid item xs={12} sm={4}>
                 <TextField
                   required
                   fullWidth
@@ -140,7 +162,7 @@ export default function SignUp() {
                   id="password"
                   autoComplete="new-password"
                 />
-              </Grid>
+              </Grid> */}
 
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -166,16 +188,16 @@ export default function SignUp() {
               </Grid>
 
 
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={4}>
                 <TextField
                   required
                   fullWidth
-                  id="street"
-                  label="Street Name"
-                  name="street"
+                  id="address"
+                  label="Address"
+                  name="address"
                 />
               </Grid>
-              <Grid item xs={12} sm={3}>
+              {/* <Grid item xs={12} sm={4}>
                 <TextField
                   required
                   fullWidth
@@ -183,8 +205,8 @@ export default function SignUp() {
                   label="Line2"
                   name="line2"
                 />
-              </Grid>
-              <Grid item xs={12} sm={3}>
+              </Grid> */}
+              {/* <Grid item xs={12} sm={3}>
                 <TextField
                   required
                   fullWidth
@@ -192,15 +214,15 @@ export default function SignUp() {
                   label="City"
                   name="city"
                 />
-              </Grid>
-              <Grid item xs={12} sm={3} >
+              </Grid> */}
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-autowidth-label">Province</InputLabel>
+                  <InputLabel id="demo-simple-select-autowidth-label">District</InputLabel>
                 <Select
-                    labelId="province"
-                    id="province"
+                    labelId="district"
+                    id="district"
                     
-                    input={<OutlinedInput label="Province" />}
+                    input={<OutlinedInput label="District" />}
                     // onChange={handleChange}
                   >
                     <MenuItem value="Central">Central </MenuItem>
@@ -216,9 +238,19 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="wppnum"
+                  label="WhatsApp Number"
+                  name="wppnum"
+                  type="number"
+                />
+              </Grid>
 
 
-              <Grid item xs={12} sm={6} >
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Faculty</InputLabel>
                 <Select
@@ -241,17 +273,32 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={4}>
                 <TextField
                   required
                   fullWidth
-                  id="wppnum"
-                  label="WhatsApp Number"
-                  name="wppnum"
+                  id="birthdate"
+                  label="Birth Date"
+                  name="birthdate"
+                  type="date"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="tlmname"
+                  label="TL/Manager Name"
+                  name="tlmname"
+                  
+                />
+              </Grid>
+              
 
-              <Grid item xs={12} sm={3} >
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Front Office Function </InputLabel>
                 <Select
@@ -273,7 +320,17 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={3} >
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="fosf"
+                  label="Front Office Sub Function"
+                  name="fosf"
+                
+                />
+              </Grid>
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Front Office Position </InputLabel>
                 <Select
@@ -289,7 +346,9 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={3} >
+
+
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Back Office Function </InputLabel>
                 <Select
@@ -309,7 +368,17 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={3} >
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  required
+                  fullWidth
+                  id="bosf"
+                  label="Front Office Sub Function"
+                  name="bosf"
+                 
+                />
+              </Grid>
+              <Grid item xs={12} sm={4} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">Back Office Position </InputLabel>
                 <Select
@@ -327,7 +396,7 @@ export default function SignUp() {
               </Grid>
               
 
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -335,9 +404,12 @@ export default function SignUp() {
                   label="Join Date in AIESEC"
                   name="joindate"
                   type="date"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
-              <Grid item xs={12} sm={4} >
+              <Grid item xs={12} sm={6} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-autowidth-label">OEVP Name </InputLabel>
                 <Select
@@ -365,45 +437,68 @@ export default function SignUp() {
                   </Select>
                 </FormControl>
               </Grid>
+
+
+              
               <Grid item xs={12} sm={4}>
-                <TextField
-                  required
-                  fullWidth
-                  id="tlmname"
-                  label="TL/Manager Name"
-                  name="tlmname"
-                  
-                />
+              <FormControl>
+                <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                >
+                  <FormControlLabel value="female" control={<Radio />} label="Female" />
+                  <FormControlLabel value="male" control={<Radio />} label="Male" />
+                  <FormControlLabel value="other" control={<Radio />} label="Other" />
+                  <FormControlLabel
+                    value="disabled"
+                    disabled
+                    control={<Radio />}
+                    label="other"
+                  />
+                </RadioGroup>
+              </FormControl>
               </Grid>
 
-              <Grid item xs={12} sm={3} >
+              {/* <Grid item xs={12} sm={4} >
                 <TextField
                   id="profile"
                   multiple
                   type="file"
-                  
-                  
+              
                 />
-              </Grid>
+              </Grid> */}
 
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="Send Username and Password via email."
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-             
-            >
+
+            <Grid item xs={12} sm={6} >
+            <Box display="flex"> 
+              <Button
+                type="reset"
+                variant="contained"
+                sx={{ mt: 3, mb: 2}}
+                style={{ padding: "11px 25px" }} 
+                
+              >
+              Clear
+              </Button>
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{ mt: 3, mb: 2}}
+                
+              >
               Register
-            </Button>
-            {/* <Grid container justifyContent="flex-end">
-              
-            </Grid> */}
+              </Button>
+            </Box> </Grid>
+          
           </Box>
         </Box>
        

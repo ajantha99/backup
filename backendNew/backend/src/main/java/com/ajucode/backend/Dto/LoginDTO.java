@@ -10,8 +10,6 @@ public class LoginDTO {
         this.password = password;
     }
 
-
-
     public String getEmail() {
         return email;
     }
