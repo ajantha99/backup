@@ -6,6 +6,7 @@ import Registration from "./registration/Registration"
 import ResetPassword from "./login/Resetpassword";
 import VerifyEmail from "./login/Verifymail";
 import Test from "./registration/RegistrationTest";
+import Register from "./registration/ManualRegistration";
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
              <Route path="/forgot" element={<ResetPassword />} />
            </Routes>
       </BrowserRouter> */}
-      <Registration />
+      {/* <Registration /> */}
       {/* <ResetPassword/> */}
       {/* <VerifyEmail/> */}
       {/* <Test/> */}
-
+      <Register/>
+      
     </div>
   );
 }
