@@ -29,7 +29,6 @@ export default function SignUp() {
 
 //     }
     
-    // ml="2rem"
 
   return (
     <ThemeProvider theme={theme}>
@@ -43,14 +42,15 @@ export default function SignUp() {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}
-        ></Box>
+        >
+        </Box>
 
         <Typography component="h1" variant="h5">
             Personal Profile
         </Typography> 
         <hr/>
 
-        <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }} ml={5}>
             <Grid container spacing={2}>
 
               <Grid item xs={12}>
@@ -257,7 +257,7 @@ export default function SignUp() {
         </Typography> 
         <hr/>
 
-        <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }} ml={5}>
             <Grid container spacing={2}>
 
             <Grid item xs={12}>
@@ -527,7 +527,7 @@ export default function SignUp() {
         </Typography> 
         <hr/>
 
-        <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }} ml={5}>
             <Grid container spacing={2}>
 
             <Grid item xs={12}>
@@ -586,7 +586,7 @@ export default function SignUp() {
             </Grid>
             
 
-            <Grid item xs={12} sm={7} >
+            <Grid item xs={12} sm={6.7} >
             <Box display="flex" justifyContent="space-between"> 
               <Button
                 type="reset"
