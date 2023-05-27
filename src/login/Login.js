@@ -54,7 +54,8 @@ export default function SignIn() {
           
            if (res.data.message === "Email not exits"){
              alert("Email not exits");
-           }else if(res.data.message === "Login Success"){  
+           }else if(res.data.message === "Login Success"){ 
+             
                navigate('/home');
               console.log("succ");
            }else{

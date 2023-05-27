@@ -13,24 +13,21 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FormControl, InputLabel, MenuItem, Select, OutlinedInput } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormLabel from '@mui/material/FormLabel';
+// import Radio from '@mui/material/Radio';
+// import RadioGroup from '@mui/material/RadioGroup';
+// import FormLabel from '@mui/material/FormLabel';
 
 
 
 
 const theme = createTheme();
 
-export default function SignUp() {
-//     const [value,checkValue] =useState("");
-//     const checkValue=(value)=>{
-                        
+export default function ManualRegistration() {
 
-//     }
     
 
   return (
+    
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="m">      
         <CssBaseline />
@@ -107,8 +104,8 @@ export default function SignUp() {
               <span style={{paddingRight:'68px'}}> Personal Email  </span>     
                         <TextField
                             type="email"
-                            name="email"
-                            id="email"
+                            name="pemail"
+                            id="pemail"
                             variant='outlined'
                             color='primary'
                             fullWidth
@@ -516,69 +513,10 @@ export default function SignUp() {
                             <MenuItem value="ogx b2b">Menuka	</MenuItem>
                 </Select>
               </Typography>
-              </Grid>
+              </Grid><br/>
 
-            </Grid>
-        </Box><br/><br/>
-
-          {/* Position Section */}
-        <Typography component="h1" variant="h5">
-                  Account
-        </Typography> 
-        <hr/>
-
-        <Box component="form" noValidate sx={{ mt: 3 }} ml={5}>
-            <Grid container spacing={2}>
-
+            {/* Send Username and Password via email */}
             <Grid item xs={12}>
-              <Typography>
-              <span style={{paddingRight:'96px'}}> Username  </span>     
-                        <TextField
-                            type="email"
-                            name="uname"
-                            id="uname"
-                            variant='outlined'
-                            color='primary'
-                            fullWidth
-                            required
-                            sx={{width: 500, ml:2}}
-                        />
-              </Typography>
-            </Grid>
-
-            <Grid item xs={12}>
-              <Typography>
-              <span style={{paddingRight:'98px'}}> Password </span>
-                        <TextField
-                            type="password"
-                            name="pass"
-                            id="pass"
-                            variant='outlined'
-                            color='primary'
-                            fullWidth
-                            required
-                            sx={{width: 500, ml:2}}
-                        />
-              </Typography>
-            </Grid>
-
-              <Grid item xs={12}>
-              <Typography>
-              <span style={{paddingRight:'38px'}}> Confirm-Password </span>
-                        <TextField
-                            type="password"
-                            name="cpass"
-                            id="cpass"
-                            variant='outlined'
-                            color='primary'
-                            fullWidth
-                            required
-                            sx={{width: 500, ml:2}}
-                        />
-              </Typography>
-            </Grid>  
-
-            <Grid item xs={12} sm={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}            
                   label="Send email with login informations."
