@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {  useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
@@ -7,7 +8,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import {Link, useParas} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+//import {useParas} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,8 +17,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LinkMui from '@mui/material/Link';
-import Logo from "./Logo.png"
-//import { List } from "@mui/material";
+import Logo from "./Logo.png";
+//import OutlinedInput from '@mui/material/OutlinedInput';
+//import InputLabel from '@mui/material/InputLabel';
+import { IconButton, InputAdornment, FormControl } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 
 // function Copyright(props) {
@@ -36,6 +41,15 @@ import Logo from "./Logo.png"
 const theme = createTheme();
 
 export default function SignIn() {
+
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -85,7 +99,8 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+
+       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -120,7 +135,7 @@ export default function SignIn() {
                 setEmail(event.target.value);
               }}
             />
-            <TextField
+            {/* <TextField
               margin="normal"
               required
               fullWidth
@@ -133,7 +148,37 @@ export default function SignIn() {
               onChange={(event)=>{
                 setPassword(event.target.value)
               }}
+            /> */}
+
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
+
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"

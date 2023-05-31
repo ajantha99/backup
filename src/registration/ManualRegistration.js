@@ -23,7 +23,7 @@ import FormGroup from '@mui/material/FormGroup';
 const theme = createTheme();
 
 export default function ManualRegistration() {
-
+  const [fname, setFirstName] = () => {}
     
 
   return (
@@ -55,6 +55,7 @@ export default function ManualRegistration() {
                 <span style={{paddingRight:'100px'}}>First Name</span>
                         <TextField
                             type="text"
+                            value={fname}
                             name="firstName"
                             id="firstName"
                             variant='outlined'
@@ -386,7 +387,7 @@ export default function ManualRegistration() {
                 </FormGroup>
               </Grid>
 {/* Should remove one */}
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
               <Typography>
               <span style={{paddingRight:'45px'}}> Are You in the Back Office </span>
               <Select
@@ -401,7 +402,7 @@ export default function ManualRegistration() {
                             <MenuItem value="teamlead">No	</MenuItem>
                         </Select>
               </Typography>
-              </Grid>
+              </Grid> */}
 {/* If yes */}
               <Grid item xs={12}>
               <Typography>
@@ -414,8 +415,12 @@ export default function ManualRegistration() {
                             required
                             sx={{width: 500, ml:2}}
                         >
+                            <MenuItem value="tm">TM	</MenuItem>
+                            <MenuItem value="ewa">EwA	</MenuItem>
+                            <MenuItem value="em">EM	</MenuItem>
+                            <MenuItem value="brand mkt">Brand MKT	</MenuItem>
                             <MenuItem value="bd">BD </MenuItem>
-                            <MenuItem value="teamlead">dd	</MenuItem>
+                            <MenuItem value="f&l">F&L </MenuItem>
                         </Select>
               </Typography>
               </Grid>
@@ -468,19 +473,7 @@ export default function ManualRegistration() {
                         >
                             <MenuItem value="tharindhu">Tharindu </MenuItem>
                             <MenuItem value="satharsara">Sathsara	</MenuItem>
-                            <MenuItem value="imali">Imali </MenuItem>
-                            <MenuItem value="roshan">Roshan </MenuItem>
-                            <MenuItem value="igt">Chathurya  </MenuItem>
-                            <MenuItem value="ogv">Sajani	</MenuItem>
-                            <MenuItem value="ogt">Hasee	</MenuItem>
-                            <MenuItem value="ogx b2b">Shalini	</MenuItem>
-                            <MenuItem value="ocx mkt">Sasandana	</MenuItem>
-                            <MenuItem value="ogx b2b">Dishan	</MenuItem>
-                            <MenuItem value="ogx b2b">Chithya	</MenuItem>
-                            <MenuItem value="ogx b2b">Jayani	</MenuItem>
-                            <MenuItem value="ogx b2b">Themal	</MenuItem>
-                            <MenuItem value="ogx b2b">Dlueen	</MenuItem>
-                            <MenuItem value="ogx b2b">Menuka	</MenuItem>
+                            
                 </Select>
               </Typography>
               </Grid>
@@ -533,8 +526,8 @@ export default function ManualRegistration() {
                 style={{ padding: "11px 25px" }}            
               >
               Clear
-
               </Button>
+
               <Button
                 type="submit"
                 variant="contained"

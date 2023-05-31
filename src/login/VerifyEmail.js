@@ -40,7 +40,7 @@ export default function VerifyEmail() {
           }}
         >
 
-          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 150 ,height:100, mt:4}} />
+          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 80 ,height:50, mt:4}} />
 
           <Typography  component="h4" variant="h5"  sx={{ mt:'10px'}}>
             Verify Your Email
