@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
-import EmailLogo from "./email.jpg"
+import EmailLogo from "./Email.png"
 import UpHeader from "./UpHeader";
 
 
@@ -40,7 +40,7 @@ export default function VerifyEmail() {
           }}
         >
 
-          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 80 ,height:50, mt:4}} />
+          <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 80 ,height:70, mt:4}} />
 
           <Typography  component="h4" variant="h5"  sx={{ mt:'10px'}}>
             Verify Your Email
