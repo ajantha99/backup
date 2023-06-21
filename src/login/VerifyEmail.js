@@ -28,7 +28,7 @@ export default function VerifyEmail() {
 
       <Grid item xs={12}>
       <ThemeProvider theme={theme}>
-      <Container  component="main" maxWidth="xs" sx={ {border: 'none', borderRadius: '5%', borderColor: 'grey.500',boxShadow: 1, marginTop:'50px'}} >
+      <Container  component="main" maxWidth="xs" sx={ {height:'250px' ,border: 'none', borderRadius: '5%', borderColor: 'grey.500',boxShadow: 1, marginTop:'50px'}} >
        
         <CssBaseline />
         <Box
@@ -43,13 +43,14 @@ export default function VerifyEmail() {
           <Avatar alt="EmailIcon" src={EmailLogo} variant="square" sx={{ width: 80 ,height:70, mt:4}} />
 
           <Typography  component="h4" variant="h5"  sx={{ mt:'10px'}}>
-            Verify Your Email
-          </Typography>
+            Verify Your Email 
+          </Typography><br/>
           <Typography  color={'GrayText'}  fontSize={"13px"}  >
-            Thank you, check your email for instructions <br/> to reset your password
-          </Typography>
+            Thank you, check your email for instructions <br/> to reset your password<br/>
+            <br/>
+          </Typography> 
           
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          {/* <Box component="form" noValidate sx={{ mt: 1 }}>
             
             <Button
               type="submit"
@@ -67,8 +68,8 @@ export default function VerifyEmail() {
                 </Link>
             </Grid>
             
-          </Box>
-        </Box>
+        </Box> */}
+        </Box> 
         
       </Container>
     </ThemeProvider>

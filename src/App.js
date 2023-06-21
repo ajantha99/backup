@@ -10,25 +10,32 @@ import ManualRegister from "./registration/ManualRegistration";
 //import ImportRegistration from "./registration/ImportRegistration";
 //import ImportRegister from "./registration/ImportRegister";
 import Import from "./ImportRegi/Import";
+import Contact from "./login/Contact";
+
 
 function App() {
   return (
     <div className="App">
       
-      {/* <BrowserRouter>
+      <BrowserRouter>
            <Routes>
              <Route path="/home" element= {<Home/>} />
              <Route path="/" element= {<Login/>} />
              <Route path="/forgot" element={<ResetPassword />} />
+             <Route path="/ManualRegistration" element ={<ManualRegister />} />
+             <Route path="/ImportRegistration" element ={<Import />} />
+             <Route path="/VerifyEmail" element={<VerifyEmail />} />
            </Routes>
-      </BrowserRouter> */}
-      {/* <VerifyEmail/>
+      </BrowserRouter>
+
+       {/* <VerifyEmail/> */}
       {/* <Registration /> */}
       {/* <Test/> */}
-      <ManualRegister />
+      {/* <ManualRegister /> */}
       {/* <ImportRegistration/> */}
       {/* <ImportRegister/> */}
       {/* <Import /> */}
+      {/* <Contact /> */}
     
     </div>
   );

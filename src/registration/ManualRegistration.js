@@ -200,18 +200,17 @@ export default function ManualRegistration() {
               <Typography>
                 <span style={{ paddingRight: '40px' }}>WhatsApp Number</span>
                 <TextField
-                  type="number"
+                  type="text"
                   name="wappNumber"
                   id="wappNumber"
                   variant="outlined"
                   color="primary"
                   fullWidth
-                  required
-                  sx={{ width: 500, ml: 2 }}
                   value={wappNumber}
                   onChange={handleInputChange}
-                  error={!!errorMessage}
+                  error={errorMessage !== ''}
                   helperText={errorMessage}
+                  sx={{ width: 500, ml: 2 }}
                 />
               </Typography>
               </Grid>
@@ -371,7 +370,7 @@ export default function ManualRegistration() {
 
               <Grid item xs={12}>
               <Typography>
-              <span style={{paddingRight:'50px'}}> Front Office SubFunction </span>
+              <span style={{paddingRight:'50px',textAlign:'center'}}> Front Office SubFunction </span>
                         <TextField
                             type="text"
                             name="fosf"
@@ -468,56 +467,69 @@ export default function ManualRegistration() {
                     <FormGroup raw sx={{ justifyContent: 'flex-center', flexDirection: 'row' }}>
                       <Typography pr={8}>Are You in the Back Office</Typography>
                       <FormControlLabel
-                          control={<Checkbox checked={isBackOffice} onChange={handleBackOfficeCheckboxChange} />}
-                          label="Yes"
-                        />
-                        <FormControlLabel
-                          control={<Checkbox checked={!isBackOffice} onChange={handleBackOfficeCheckboxChange} />}
-                          label="No"
-                        />
-                      </FormGroup>
+                        control={
+                          <Checkbox
+                            checked={isBackOffice}
+                            onChange={handleBackOfficeCheckboxChange}
+                          />
+                        }
+                        label="Yes"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={!isBackOffice}
+                            onChange={handleBackOfficeCheckboxChange}
+                          />
+                        }
+                        label="No"
+                      />
+                    </FormGroup>
                     {isBackOffice && (
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
-              <Typography>
-              <span style={{paddingRight:'38px'}}> Back Office Function Name </span>
-              <Select
-                            labelId="bofname"
-                            id="demo-simple-select-autowidth"
-                            name="bofname"
-                            // id="faculty"
-                            required
-                            sx={{width: 500, ml:2}}
-                        >
-                            <MenuItem value="tm">TM	</MenuItem>
-                            <MenuItem value="ewa">EwA	</MenuItem>
-                            <MenuItem value="em">EM	</MenuItem>
-                            <MenuItem value="brand mkt">Brand MKT	</MenuItem>
-                            <MenuItem value="bd">BD </MenuItem>
-                            <MenuItem value="f&l">F&L </MenuItem>
-                        </Select>
-              </Typography>
-              </Grid>
+                          <Typography>
+                            <span style={{ paddingRight: '38px' }}>
+                              Back Office Function Name
+                            </span>
+                            <Select
+                              labelId="bofname"
+                              id="demo-simple-select-autowidth"
+                              name="bofname"
+                              required
+                              sx={{ width: 500, ml: 2 }}
+                            >
+                              <MenuItem value="tm">TM</MenuItem>
+                              <MenuItem value="ewa">EwA</MenuItem>
+                              <MenuItem value="em">EM</MenuItem>
+                              <MenuItem value="brand mkt">Brand MKT</MenuItem>
+                              <MenuItem value="bd">BD</MenuItem>
+                              <MenuItem value="f&l">F&L</MenuItem>
+                            </Select>
+                          </Typography>
+                        </Grid>
+
+                        <Grid item xs={12}>
+                          <Typography>
+                            <span style={{ paddingRight: '58px' }}>
+                              Back Office SubFunction
+                            </span>
+                            <TextField
+                              type="text"
+                              name="bosf"
+                              id="bosf"
+                              variant="outlined"
+                              color="primary"
+                              fullWidth
+                              required
+                              sx={{ width: 500, ml: 2 }}
+                            />
+                          </Typography>
+                        </Grid>
 
               <Grid item xs={12}>
               <Typography>
-              <span style={{paddingRight:'58px'}}> Back Office SubFunction </span>
-                        <TextField
-                            type="text"
-                            name="bosf"
-                            id="bosf"
-                            variant='outlined'
-                            color='primary'
-                            fullWidth
-                            required
-                            sx={{width: 500, ml:2}}
-                        />
-              </Typography>
-              </Grid>
-
-              <Grid item xs={12}>
-              <Typography>
-              <span style={{ paddingRight: '90px' }}>Back Office Position</span>
+              <span style={{ paddingRight: '97px' }}>Back Office Position</span>
                   <Select
                     labelId="bop"
                     id="demo-simple-select-autowidth"
@@ -625,16 +637,16 @@ export default function ManualRegistration() {
             )}
             </Grid>
 
-            {/* Send Username and Password via email */}
+            {/* Send Username and Password via email
             <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}            
                   label="Send email with login informations."
                 />
-            </Grid>
+            </Grid> */}
             
 
-            <Grid item xs={12} sm={6.7} >
+            <Grid item xs={12} sm={7} >
             <Box display="flex" justifyContent="space-between"> 
               <Button
                 type="reset"

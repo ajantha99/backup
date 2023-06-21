@@ -1,4 +1,3 @@
-//import { borders } from '@mui/system';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -10,14 +9,46 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link, useParas} from 'react-router-dom';
 import LinkMui from '@mui/material/Link';
+import {useRef} from "react";
+import emailjs from '@emailjs/browser';
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import {  useState } from "react";
 
 import UpHeader from "./UpHeader";
-
 
 const theme = createTheme();
 
 export default function ResetPassword() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
+  async function go(event) {
+      event.preventDefault();
+      navigate('/home');
+        
+  }
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('default_service', 'template_vg3uiwv', form.current, 'U0_D3jXnbM1yPEax-')
+      .then((result) => {
+        
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      }
+    );
+    e.target.reset();
+    navigate('/VerifyEmail');
+  };
+
+  //new service_6s04l9o
+  
   return (
     <>
     <Grid container  ml={1} >
@@ -47,11 +78,14 @@ export default function ResetPassword() {
           <Typography  color={'GrayText'}  fontSize={"13px"}  >
             Enter the email address associated with your account and <br/>we will send you a link to reset your password.
           </Typography>
-          
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+
+
+          <Box component="form" ref={form} onSubmit={sendEmail} noValidate sx={{ mt: 1 }}>
+
             <TextField
+            required
               margin="normal"
-              required
+              
               fullWidth
               id="email"
               label="Email Address"
@@ -64,20 +98,12 @@ export default function ResetPassword() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 ,padding: 2, borderRadius:"12px"}}
-             
               
-              //onClick={login}
+              sx={{ mt: 3, mb: 2 ,padding: 2, borderRadius:"12px"}}
             >
-              Continue
+               Confirm             
             </Button>
-            
-            {/* <Grid item >
-                <Link href="#" variant="body2" display="center" justifyContent="flex-center" >
-                  {"Back to Sign in"} <br/> <br/><br/>
-                </Link>
-            </Grid> */}
-
+           
             <Grid container >
             <Grid item xs >
              
@@ -86,7 +112,7 @@ export default function ResetPassword() {
                 </LinkMui>
               </Grid>
             </Grid>
-            
+          
           </Box>
         </Box>
   
